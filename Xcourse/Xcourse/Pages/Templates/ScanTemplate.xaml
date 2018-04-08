@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffilsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             x:Class="Xcourse.Pages.Templates.ScanTemplate">
+  <ContentView.Content>
+      <StackLayout>
+            <StackLayout x:Name="trigger" Orientation="Horizontal"
+                         HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+                         Padding="30,0"
+                         BackgroundColor="{StaticResource Main}">
+                <Label Text="Scan new item"
+                       FontSize="Large" FontAttributes="Bold" TextColor="Black"
+                       HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"
+                       VerticalTextAlignment="Center"></Label>
+                <Image Source="camera.png"
+                       HeightRequest="50" WidthRequest="50"
+                       VerticalOptions="CenterAndExpand"></Image>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTriggerTapped"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+
+            <ListView x:Name="barcodeList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Barcode}"></Label>
+                                <Label Text="{Binding Timestamp}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

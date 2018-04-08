@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
+using Xcourse.Pages;
+using Xcourse.Services;
+using Xcourse.Utils;
 
 namespace Xcourse
 {
@@ -13,8 +16,12 @@ namespace Xcourse
 		{
 			InitializeComponent();
 
-			MainPage = new Xcourse.MainPage();
-		}
+            MainPage = AuthenticationManager.IsLoggedIn() ? (Page)new NavigationPage(new RootPage()) : new LoginPage();
+
+#pragma warning disable CS4014 // No need to await service
+            LocationService.Instance.StartListening();
+#pragma warning restore CS4014
+        }
 
 		protected override void OnStart ()
 		{

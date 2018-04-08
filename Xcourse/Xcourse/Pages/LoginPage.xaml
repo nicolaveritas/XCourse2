@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xcourse.Pages.LoginPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Padding="42, 100">
+            <Label Text="Welcome XCourse!"
+                   VerticalOptions="StartAndExpand" 
+                   HorizontalOptions="CenterAndExpand" 
+                   FontSize="Large" FontAttributes="Bold"></Label>
+            <Entry x:Name="usernameEntry" 
+                   Placeholder="Username"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="FillAndExpand"></Entry>
+            <Entry x:Name="passwordEntry" 
+                   Placeholder="Password"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="FillAndExpand"></Entry>
+            <Button x:Name="loginButton" 
+                    Text="Login" IsEnabled="False"
+                    Clicked="OnLoginButtonClicked"
+                    VerticalOptions="StartAndExpand" 
+                    HorizontalOptions="FillAndExpand"></Button>
+            <Label x:Name="errorMessage" TextColor="Red" Text="Credenziali errate"
+                   HorizontalTextAlignment="Center"
+                   IsVisible="False"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

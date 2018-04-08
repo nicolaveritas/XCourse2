@@ -4,7 +4,9 @@
              x:Class="Xcourse.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <Color x:Key="Main">#dff441</Color>        
+        </ResourceDictionary>
 
 	</Application.Resources>
 </Application>
