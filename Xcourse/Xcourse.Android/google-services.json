@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "289927439380",
+    "firebase_url": "https://xcourse-6c952.firebaseio.com",
+    "project_id": "xcourse-6c952",
+    "storage_bucket": "xcourse-6c952.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289927439380:android:2626faf2f8604347",
+        "android_client_info": {
+          "package_name": "com.nv.Xcourse"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289927439380-jio5lnlk85ntvpraf5u0t0lnspbmcrql.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTXq0WX9LnVWHpSjRtyQaHNvM8jNGYIl0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

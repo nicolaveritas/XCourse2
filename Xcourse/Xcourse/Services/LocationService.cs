@@ -70,21 +70,12 @@ namespace Xcourse.Services
             if (CrossGeolocator.Current.IsListening)
                 return;
 
-            await CrossGeolocator.Current.StartListeningAsync(TimeSpan.FromSeconds(5), 10, true, new ListenerSettings
-            {
-                ActivityType = ActivityType.AutomotiveNavigation,
-                AllowBackgroundUpdates = true,
-                DeferLocationUpdates = true,
-                DeferralDistanceMeters = 1,
-                DeferralTime = TimeSpan.FromSeconds(1),
-                ListenForSignificantChanges = true,
-                PauseLocationUpdatesAutomatically = false
-            });
+            await CrossGeolocator.Current.StartListeningAsync(TimeSpan.FromSeconds(5), 10, true);
             CrossGeolocator.Current.PositionChanged += PositionChanged;
             CrossGeolocator.Current.PositionError += PositionError;
         }
 
-        private void PositionChanged(object sender, PositionEventArgs e)
+        private async void PositionChanged(object sender, PositionEventArgs e)
         {
             var position = e.Position;
             var output = "Full: Lat: " + position.Latitude + " Long: " + position.Longitude;
@@ -97,6 +88,7 @@ namespace Xcourse.Services
             Debug.WriteLine(output);
 
             // TODO send position updates on SignalR
+            await RestService.PostLocation(LocationService.Instance.GetCurrentPosition().Result);
         }
 
         private void PositionError(object sender, PositionErrorEventArgs e)
